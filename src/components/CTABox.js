@@ -31,7 +31,7 @@ const CTABox = (props) => {
                 Únete a {props.isPaid && 'paid'} los suscriptores de <span className="font-semibold">{publication}</span> para empezar a comentar.
             </p>
             <button onClick={handleSignUpClick} className="mb-[12px] text-white font-san py-[14px] px-5 rounded inline-block font-medium leading-none hover:opacity-90 transition-all" style={buttonStyle}>
-                {(props.isPaid && member) ? 'Upgrade now' : 'Sign up now'}
+                {(props.isPaid && member) ? 'Mejora tu suscripción' : 'Apúntate ahora'}
             </button>
             {!member && (<p className="text-sm font-sans text-center text-neutral-400 dark:text-[rgba(255,255,255,0.5)]">
                 <span className='inline-block mr-1 text-[15px]'>¿Ya estás apuntado?</span>
