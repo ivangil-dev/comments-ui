@@ -31,24 +31,24 @@ const Form = (props) => {
     } else if (progress === 'sent') {
         buttonIcon = null;
     }
-    
+
     let config;
     if (props.isReply) {
         config = {
-            placeholder: 'Reply to comment',
+            placeholder: 'Responder al comentario',
             autofocus: true
         };
     } else if (props.isEdit) {
         config = {
-            placeholder: 'Edit this comment',
-            // warning: we cannot use autofocus on the edit field, because that sets 
+            placeholder: 'Editar este comentario',
+            // warning: we cannot use autofocus on the edit field, because that sets
             // the cursor position at the beginning of the text field instead of the end
             autofocus: false,
             content: props.comment.html
         };
     } else {
         config = {
-            placeholder: (commentsCount === 0 ? 'Start the conversation' : 'Join the discussion'),
+            placeholder: (commentsCount === 0 ? 'Empieza la conversación' : 'Únete a la discusión'),
             autofocus: false
         };
     }
@@ -58,7 +58,7 @@ const Form = (props) => {
     });
 
     const getScrollToPosition = () => {
-        let yOffset = 0; 
+        let yOffset = 0;
         const element = formEl.current;
 
         // Because we are working in an iframe, we need to resolve the position inside this iframe to the position in the top window
@@ -168,7 +168,7 @@ const Form = (props) => {
 
                 // Trigger scrolling when yMin and yMax is closer than this to the border of the viewport
                 const offset = 64;
-                
+
                 const viewportHeight = window.innerHeight;
                 const viewPortYMin = window.scrollY;
                 const viewPortYMax = viewPortYMin + viewportHeight;
@@ -374,7 +374,7 @@ const Form = (props) => {
 
     const handleShowDialog = (event, options) => {
         event.preventDefault();
-        
+
         setPreventClosing(true);
         editor?.commands.blur();
 
@@ -390,11 +390,11 @@ const Form = (props) => {
 
     let submitText;
     if (props.isReply) {
-        submitText = <><span className="hidden sm:inline">Add </span><span className="capitalize sm:normal-case">reply</span></>;
+        submitText = <><span className="hidden sm:inline">Agregar </span><span className="capitalize sm:normal-case">respuesta</span></>;
     } else if (props.isEdit) {
-        submitText = 'Save';
+        submitText = 'Guardar';
     } else {
-        submitText = <><span className="hidden sm:inline">Add </span><span className="capitalize sm:normal-case">comment</span></>;
+        submitText = <><span className="hidden sm:inline">Agregar </span><span className="capitalize sm:normal-case">comentario</span></>;
     }
 
     if (progress === 'sending') {
@@ -427,7 +427,7 @@ const Form = (props) => {
                                 w-full px-3 py-4
                                 bg-transparent dark:bg-[rgba(255,255,255,0.08)]
                                 rounded-md border-none border border-slate-50 dark:border-none
-                                font-sans text-[16.5px] leading-normal dark:text-neutral-300 
+                                font-sans text-[16.5px] leading-normal dark:text-neutral-300
                                 focus:outline-0
                                 shadow-form hover:shadow-formxl dark:shadow-transparent
                                 ${commentsCount === 0 && 'placeholder:text-neutral-700'}
@@ -437,16 +437,16 @@ const Form = (props) => {
                             `}>
                                 <EditorContent
                                     onMouseDown={stopIfFocused} onTouchStart={stopIfFocused}
-                                    editor={editor} 
+                                    editor={editor}
                                 />
                             </div>
                             <div className="
                                 absolute right-[9px] bottom-[9px]
                                 flex space-x-4
-                                transition-[opacity] duration-150 
+                                transition-[opacity] duration-150
                             ">
                                 {(props.isEdit || props.isReply) &&
-                                    <button type="button" onClick={props.close} className="outline-0 font-sans text-sm font-medium ml-2.5 text-neutral-500 dark:text-neutral-400">Cancel</button>}
+                                    <button type="button" onClick={props.close} className="outline-0 font-sans text-sm font-medium ml-2.5 text-neutral-500 dark:text-neutral-400">Cancelar</button>}
                                 <button
                                     className={`
                                         flex items-center justify-center w-auto sm:w-[128px] ${props.isReply && 'sm:w-[100px]'} ${props.isEdit && 'sm:w-[64px]'} h-[39px]
@@ -487,7 +487,7 @@ const Form = (props) => {
                                         handleShowDialog(event, {
                                             bioAutofocus: false
                                         });
-                                    }}>{memberName ? memberName : 'Anonymous'}</div>
+                                    }}>{memberName ? memberName : 'Anónimo'}</div>
                                 <div className="flex items-baseline justify-start">
                                     <button
                                         className={`group transition duration-150 whitespace-nowrap max-w-[80%] sm:max-w-[90%] flex items-center justify-start font-sans text-[14px] text-left tracking-tight text-neutral-400 hover:text-neutral-500 dark:text-[rgba(255,255,255,0.5)] ${!memberBio && 'text-neutral-300 hover:text-neutral-400'}`}
@@ -495,7 +495,7 @@ const Form = (props) => {
                                             handleShowDialog(event, {
                                                 bioAutofocus: true
                                             });
-                                        }}><span className="text-ellipsis overflow-hidden ...">{memberBio ? memberBio : 'Add your expertise'}</span>
+                                        }}><span className="text-ellipsis overflow-hidden ...">{memberBio ? memberBio : 'Habla un poco sobre ti'}</span>
                                         {memberBio && <EditIcon className="transition-all duration-100 ease-out opacity-0 -translate-x-[6px] group-hover:opacity-100 group-hover:translate-x-0 w-[12px] h-[12px] stroke-neutral-500 ml-1" />}
                                     </button>
                                 </div>
@@ -507,5 +507,5 @@ const Form = (props) => {
         </>
     );
 };
-  
+
 export default Form;

@@ -15,7 +15,7 @@ function EditedInfo({comment}) {
     }
     return (
         <span>
-            <span className="mx-[0.3em]">·</span>Edited
+            <span className="mx-[0.3em]">·</span>Editado
         </span>
     );
 }
@@ -59,9 +59,9 @@ const Comment = ({updateIsEditing = null, isEditing, ...props}) => {
     let notPublishedMessage;
     if (isNotPublished) {
         if (admin && comment.status === 'hidden') {
-            notPublishedMessage = 'This comment has been hidden.';
+            notPublishedMessage = 'Este comentario ha sido ocultado.';
         } else {
-            notPublishedMessage = 'This comment has been removed.';
+            notPublishedMessage = 'Este comentario ha sido eliminado.';
         }
     }
 
@@ -106,7 +106,7 @@ const Comment = ({updateIsEditing = null, isEditing, ...props}) => {
                                     </div>
                                 </div> :
                                 <div>
-                                    <h4 className="text-[17px] font-sans font-bold tracking-tight text-[rgb(23,23,23] dark:text-[rgba(255,255,255,0.85)]">{!comment.member ? 'Deleted member' : (comment.member.name ? comment.member.name : 'Anonymous')}</h4>
+                                    <h4 className="text-[17px] font-sans font-bold tracking-tight text-[rgb(23,23,23] dark:text-[rgba(255,255,255,0.85)]">{!comment.member ? 'Suscriptor eliminado' : (comment.member.name ? comment.member.name : 'Anónimo')}</h4>
                                     <div className="flex items-baseline font-sans text-[14px] tracking-tight pr-4 text-neutral-400 dark:text-[rgba(255,255,255,0.5)]">
                                         <span>
                                             {memberBio && <span>{memberBio}<span className="mx-[0.3em]">·</span></span>}
@@ -136,7 +136,7 @@ const Comment = ({updateIsEditing = null, isEditing, ...props}) => {
                             </div>
                         }
 
-                        {isInReplyMode && 
+                        {isInReplyMode &&
                             <div className="my-10">
                                 <Form parent={comment} close={closeReplyMode} isReply={true} />
                             </div>

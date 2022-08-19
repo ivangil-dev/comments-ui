@@ -12,7 +12,7 @@ const CTABox = (props) => {
         color: accentColor
     };
 
-    const titleText = (props.isFirst ? 'Start the conversation' : 'Join the discussion');
+    const titleText = (props.isFirst ? 'Empieza la conversación' : 'Únete a la discusión');
 
     const handleSignUpClick = (event) => {
         window.location.href = (props.isPaid && member) ? '#/portal/account/plans' : '#/portal/signup';
@@ -28,14 +28,14 @@ const CTABox = (props) => {
                 {titleText}
             </h1>
             <p className="mb-[28px] px-0 sm:px-8 w-full sm:max-w-screen-sm font-sans text-[16px] text-center leading-normal text-neutral-600 dark:text-[rgba(255,255,255,0.85)]">
-                Become a {props.isPaid && 'paid'} member of <span className="font-semibold">{publication}</span> to start commenting.
+                Únete a {props.isPaid && 'paid'} los suscriptores de <span className="font-semibold">{publication}</span>para empezar a comentar.
             </p>
             <button onClick={handleSignUpClick} className="mb-[12px] text-white font-san py-[14px] px-5 rounded inline-block font-medium leading-none hover:opacity-90 transition-all" style={buttonStyle}>
                 {(props.isPaid && member) ? 'Upgrade now' : 'Sign up now'}
             </button>
             {!member && (<p className="text-sm font-sans text-center text-neutral-400 dark:text-[rgba(255,255,255,0.5)]">
-                <span className='inline-block mr-1 text-[15px]'>Already a member?</span>
-                <button onClick={handleSignInClick} className="rounded-md hover:opacity-90 transition-all text-sm font-semibold" style={linkStyle}>Sign in</button>
+                <span className='inline-block mr-1 text-[15px]'>¿Ya estás apuntado?</span>
+                <button onClick={handleSignInClick} className="rounded-md hover:opacity-90 transition-all text-sm font-semibold" style={linkStyle}>Iniciar sesión</button>
             </p>)}
         </section>
     );

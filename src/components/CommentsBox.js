@@ -16,7 +16,7 @@ const CommentsBoxTitle = ({title, showCount, count}) => {
     const Title = () => {
         if (title === null) {
             return (
-                <><span className="hidden sm:inline">Member </span><span className="capitalize sm:normal-case">discussion</span></>
+                <><span className="capitalize sm:normal-case">Comentar</span><span className="hidden sm:inline">publicación </span></>
             );
         }
 
@@ -30,12 +30,12 @@ const CommentsBoxTitle = ({title, showCount, count}) => {
 
         if (count === 1) {
             return (
-                <div className="text-neutral-400 text-[1.6rem]">1 comment</div>
+                <div className="text-neutral-400 text-[1.6rem]">1 comentario</div>
             );
         }
 
         return (
-            <div className="text-neutral-400 text-[1.6rem]">{count} comments</div>
+            <div className="text-neutral-400 text-[1.6rem]">{count} comentarios</div>
         );
     };
 
