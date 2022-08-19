@@ -52,7 +52,7 @@ const AddNameDialog = (props) => {
                     inputBioRef.current?.focus();
                 } else {
                     inputNameRef.current?.focus();
-                }  
+                }
             }, 200);
 
             return () => {
@@ -85,7 +85,7 @@ const AddNameDialog = (props) => {
                             </div>
                         </div>
                     </div>
-                </Transition> 
+                </Transition>
             );
         };
 
@@ -93,10 +93,10 @@ const AddNameDialog = (props) => {
 
         // using URLS over real images for avatars as serving JPG images was not optimal (based on discussion with team)
         let exampleProfiles = [
-            {avatar: 'https://randomuser.me/api/portraits/men/32.jpg', name: 'James Fletcher', expertise: 'Full-time parent'},
-            {avatar: 'https://randomuser.me/api/portraits/women/30.jpg', name: 'Naomi Schiff', expertise: 'Founder @ Acme Inc'},
-            {avatar: 'https://randomuser.me/api/portraits/men/4.jpg', name: 'Franz Tost', expertise: 'Neurosurgeon'},
-            {avatar: 'https://randomuser.me/api/portraits/women/51.jpg', name: 'Katrina Klosp', expertise: 'Local resident'}
+            {avatar: 'https://randomuser.me/api/portraits/men/32.jpg', name: 'Demis Hassabis', expertise: 'Creador de mentes'},
+            {avatar: 'https://randomuser.me/api/portraits/women/30.jpg', name: 'Gabriela González', expertise: 'Espía de la gravedad'},
+            {avatar: 'https://randomuser.me/api/portraits/men/4.jpg', name: 'Guillem Anglada-Escudé', expertise: 'Cazador de planetas'},
+            {avatar: 'https://randomuser.me/api/portraits/women/51.jpg', name: 'Elena Long', expertise: 'Pionera de la diversidad'}
         ];
 
         for (let i = 0; i < exampleProfiles.length; i++) {
@@ -117,11 +117,11 @@ const AddNameDialog = (props) => {
                     </div>
                 }
                 <div className={`${isMobile() ? 'w-full' : 'w-[60%]'} p-0 sm:p-8`}>
-                    <h1 className="font-sans font-bold tracking-tight text-[24px] mb-1 text-black text-center sm:text-left">Complete your profile<span className="hidden sm:inline">.</span></h1>
-                    <p className="font-sans text-base text-neutral-500 pr-0 sm:pr-10 leading-9 text-center sm:text-left">Add context to your comment, share your name and expertise to foster a healthy discussion.</p>
+                    <h1 className="font-sans font-bold tracking-tight text-[24px] mb-1 text-black text-center sm:text-left">Completa tu perfil<span className="hidden sm:inline">.</span></h1>
+                    <p className="font-sans text-base text-neutral-500 pr-0 sm:pr-10 leading-9 text-center sm:text-left">Añade contexto a tu comentario, comparte tu nombre y experiencia para fomentar una discusión saludable.</p>
                     <section className="mt-8 text-left">
                         <div className="flex flex-row mb-2 justify-between">
-                            <label htmlFor="comments-name" className="font-sans font-semibold text-[1.3rem]">Name</label>
+                            <label htmlFor="comments-name" className="font-sans font-semibold text-[1.3rem]">Nombre</label>
                             <Transition
                                 show={!!error.name}
                                 enter="transition duration-300 ease-out"
@@ -141,7 +141,7 @@ const AddNameDialog = (props) => {
                             name="name"
                             ref={inputNameRef}
                             value={name}
-                            placeholder="Jamie Larson"
+                            placeholder="Thomas Edison"
                             onChange={(e) => {
                                 setName(e.target.value);
                             }}
@@ -154,8 +154,8 @@ const AddNameDialog = (props) => {
                             maxLength="64"
                         />
                         <div className="flex flex-row mt-6 mb-2 justify-between">
-                            <label htmlFor="comments-name" className="font-sans font-semibold text-[1.3rem]">Expertise</label>
-                            <div className={`font-sans text-[1.3rem] text-neutral-400 ${(bioCharsLeft === 0) && 'text-red-500'}`}><b>{bioCharsLeft}</b> characters left</div>
+                            <label htmlFor="comments-name" className="font-sans font-semibold text-[1.3rem]">Experiencia</label>
+                            <div className={`font-sans text-[1.3rem] text-neutral-400 ${(bioCharsLeft === 0) && 'text-red-500'}`}><b>{bioCharsLeft}</b> carácteres restantes</div>
                         </div>
                         <input
                             id="comments-bio"
@@ -164,7 +164,7 @@ const AddNameDialog = (props) => {
                             name="bio"
                             ref={inputBioRef}
                             value={bio}
-                            placeholder="Head of Marketing at Acme, Inc"
+                            placeholder="Jefe de marketing en ACME SL."
                             onChange={(e) => {
                                 let bioText = e.target.value;
                                 setBioCharsLeft(maxBioChars - bioText.length);
@@ -183,7 +183,7 @@ const AddNameDialog = (props) => {
                             style={{backgroundColor: accentColor ?? '#000000'}}
                             onClick={submit}
                         >
-                            Save
+                            Guardar
                         </button>
                     </section>
                 </div>
