@@ -28,7 +28,7 @@ const CTABox = (props) => {
                 {titleText}
             </h1>
             <p className="mb-[28px] px-0 sm:px-8 w-full sm:max-w-screen-sm font-sans text-[16px] text-center leading-normal text-neutral-600 dark:text-[rgba(255,255,255,0.85)]">
-                Únete a {props.isPaid && 'paid'} los suscriptores de <span className="font-semibold">{publication}</span>para empezar a comentar.
+                Únete a {props.isPaid && 'paid'} los suscriptores de <span className="font-semibold">{publication}</span> para empezar a comentar.
             </p>
             <button onClick={handleSignUpClick} className="mb-[12px] text-white font-san py-[14px] px-5 rounded inline-block font-medium leading-none hover:opacity-90 transition-all" style={buttonStyle}>
                 {(props.isPaid && member) ? 'Upgrade now' : 'Sign up now'}
