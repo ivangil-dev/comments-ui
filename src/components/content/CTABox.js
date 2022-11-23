@@ -31,7 +31,7 @@ const CTABox = ({isFirst, isPaid}) => {
                 Convertirse en un {isPaid && 'paid'} miembro de <span className="font-semibold">{publication}</span> Para empezar a comentar.
             </p>
             <button onClick={handleSignUpClick} className="font-san mb-[12px] inline-block rounded py-[14px] px-5 font-medium leading-none text-white transition-all hover:opacity-90" style={buttonStyle}>
-                {(isPaid && member) ? 'Upgrade now' : 'Sign up now'}
+                {(isPaid && member) ? 'Actualizar ahora' : 'Registrate ahora'}
             </button>
             {!member && (<p className="text-center font-sans text-sm text-[rgba(0,0,0,0.4)] dark:text-[rgba(255,255,255,0.5)]">
                 <span className='mr-1 inline-block text-[15px]'>¿Ya tienes cuenta?</span>
