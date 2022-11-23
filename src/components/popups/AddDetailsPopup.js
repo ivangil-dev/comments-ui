@@ -38,7 +38,7 @@ const AddDetailsPopup = (props) => {
             });
             close(true);
         } else {
-            setError({name: 'Enter your name'});
+            setError({name: 'Introduce tu nombre'});
             setName('');
             inputNameRef.current?.focus();
         }
@@ -52,7 +52,7 @@ const AddDetailsPopup = (props) => {
                     inputExpertiseRef.current?.focus();
                 } else {
                     inputNameRef.current?.focus();
-                }  
+                }
             }, 200);
 
             return () => {
@@ -85,7 +85,7 @@ const AddDetailsPopup = (props) => {
                             </div>
                         </div>
                     </div>
-                </Transition> 
+                </Transition>
             );
         };
 
@@ -93,10 +93,10 @@ const AddDetailsPopup = (props) => {
 
         // using URLS over real images for avatars as serving JPG images was not optimal (based on discussion with team)
         let exampleProfiles = [
-            {avatar: 'https://randomuser.me/api/portraits/men/32.jpg', name: 'James Fletcher', expertise: 'Full-time parent'},
-            {avatar: 'https://randomuser.me/api/portraits/women/30.jpg', name: 'Naomi Schiff', expertise: 'Founder @ Acme Inc'},
-            {avatar: 'https://randomuser.me/api/portraits/men/4.jpg', name: 'Franz Tost', expertise: 'Neurosurgeon'},
-            {avatar: 'https://randomuser.me/api/portraits/women/51.jpg', name: 'Katrina Klosp', expertise: 'Local resident'}
+            {avatar: 'https://randomuser.me/api/portraits/men/32.jpg', name: 'Demis Hassabis', expertise: 'Creador de mentes'},
+            {avatar: 'https://randomuser.me/api/portraits/women/30.jpg', name: 'Gabriela González', expertise: 'Espía de la gravedad'},
+            {avatar: 'https://randomuser.me/api/portraits/men/4.jpg', name: 'Guillem Anglada-Escudé', expertise: 'Cazador de planetas'},
+            {avatar: 'https://randomuser.me/api/portraits/women/51.jpg', name: 'Elena Long', expertise: 'Pionera de la diversidad'}
         ];
 
         for (let i = 0; i < exampleProfiles.length; i++) {
@@ -117,11 +117,11 @@ const AddDetailsPopup = (props) => {
                     </div>
                 }
                 <div className={`${isMobile() ? 'w-full' : 'w-[60%]'} p-0 sm:p-8`}>
-                    <h1 className="mb-1 text-center font-sans text-[24px] font-bold tracking-tight text-black sm:text-left">Complete your profile<span className="hidden sm:inline">.</span></h1>
-                    <p className="text-base pr-0 text-center font-sans leading-9 text-neutral-500 sm:pr-10 sm:text-left">Add context to your comment, share your name and expertise to foster a healthy discussion.</p>
+                    <h1 className="mb-1 text-center font-sans text-[24px] font-bold tracking-tight text-black sm:text-left">Completa tu perfil<span className="hidden sm:inline">.</span></h1>
+                    <p className="text-base pr-0 text-center font-sans leading-9 text-neutral-500 sm:pr-10 sm:text-left">Agrega contexto a tu comentario, comparte tu nombre y experiencia para fomentar una discusión saludable.</p>
                     <section className="mt-8 text-left">
                         <div className="mb-2 flex flex-row justify-between">
-                            <label htmlFor="comments-name" className="font-sans text-[1.3rem] font-semibold">Name</label>
+                            <label htmlFor="comments-name" className="font-sans text-[1.3rem] font-semibold">Nombre</label>
                             <Transition
                                 show={!!error.name}
                                 enter="transition duration-300 ease-out"
@@ -141,7 +141,7 @@ const AddDetailsPopup = (props) => {
                             name="name"
                             ref={inputNameRef}
                             value={name}
-                            placeholder="Jamie Larson"
+                            placeholder="Thomas Edison"
                             onChange={(e) => {
                                 setName(e.target.value);
                             }}
@@ -154,17 +154,17 @@ const AddDetailsPopup = (props) => {
                             maxLength="64"
                         />
                         <div className="mt-6 mb-2 flex flex-row justify-between">
-                            <label htmlFor="comments-name" className="font-sans text-[1.3rem] font-semibold">Expertise</label>
-                            <div className={`font-sans text-[1.3rem] text-neutral-400 ${(expertiseCharsLeft === 0) && 'text-red-500'}`}><b>{expertiseCharsLeft}</b> characters left</div>
+                            <label htmlFor="comments-name" className="font-sans text-[1.3rem] font-semibold">Experiencia</label>
+                            <div className={`font-sans text-[1.3rem] text-neutral-400 ${(expertiseCharsLeft === 0) && 'text-red-500'}`}><b>{expertiseCharsLeft}</b> caracteres restantes</div>
                         </div>
                         <input
                             id="comments-expertise"
                             className={`flex h-[42px] w-full items-center rounded border border-neutral-200 px-3 font-sans text-[16px] outline-0 transition-[border-color] duration-200 focus:border-neutral-300 ${(expertiseCharsLeft === 0) && 'border-red-500 focus:border-red-500'}`}
                             type="text"
-                            name="expertise"
+                            name="experiencia"
                             ref={inputExpertiseRef}
                             value={expertise}
-                            placeholder="Head of Marketing at Acme, Inc"
+                            placeholder="Inventor, cientifico y empresario"
                             onChange={(e) => {
                                 let expertiseText = e.target.value;
                                 setExpertiseCharsLeft(maxExpertiseChars - expertiseText.length);
@@ -184,7 +184,7 @@ const AddDetailsPopup = (props) => {
                             style={{backgroundColor: accentColor ?? '#000000'}}
                             onClick={submit}
                         >
-                            Save
+                            Guardar
                         </button>
                     </section>
                 </div>

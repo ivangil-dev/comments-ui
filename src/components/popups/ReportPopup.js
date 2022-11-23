@@ -53,8 +53,8 @@ const ReportPopup = (props) => {
 
     return (
         <div className="rounded-none relative h-screen w-screen bg-white p-[28px] text-center shadow-modal sm:h-auto sm:w-[500px] sm:rounded-xl sm:p-8 sm:text-left" onMouseDown={stopPropagation}>
-            <h1 className="mb-1 font-sans text-[24px] font-bold tracking-tight text-black">You want to report<span className="hidden sm:inline"> this comment</span>?</h1>
-            <p className="text-base px-4 font-sans leading-9 text-neutral-500 sm:pr-4 sm:pl-0">Your request will be sent to the owner of this site.</p>
+            <h1 className="mb-1 font-sans text-[24px] font-bold tracking-tight text-black">¿Quieres reportar<span className="hidden sm:inline"> este comentario</span>?</h1>
+            <p className="text-base px-4 font-sans leading-9 text-neutral-500 sm:pr-4 sm:pl-0">Tu solicitud se enviará al equipo de este sitio.</p>
             <div className="mt-10 flex flex-col items-center justify-start gap-4 sm:flex-row">
                 <button
                     type="button"
@@ -64,7 +64,7 @@ const ReportPopup = (props) => {
                 >
                     {buttonIcon}{buttonText}
                 </button>
-                <button type="button" onClick={close} className="font-sans text-sm font-medium text-neutral-500 dark:text-neutral-400">Cancel</button>
+                <button type="button" onClick={close} className="font-sans text-sm font-medium text-neutral-500 dark:text-neutral-400">Cancelar</button>
             </div>
             <CloseButton close={() => close(false)} />
         </div>

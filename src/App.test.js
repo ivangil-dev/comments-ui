@@ -213,7 +213,7 @@ describe('Comments', () => {
         expect(button).not.toBeInTheDocument();
     });
 
-    it('can handle deleted members', async () => {
+    it('can handle Suscriptor perdidos', async () => {
         const limit = 5;
 
         const {api, iframeDocument} = renderApp();

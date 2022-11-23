@@ -17,7 +17,7 @@ function addRootDiv() {
         document.body.appendChild(elem);
     } else {
         // eslint-disable-next-line no-console
-        console.warn('[Comments] Comment box location was not found: could not load comments box.');
+        console.warn('[Comentarios] No se encontró la ubicación del cuadro de comentarios: no se pudo cargar el cuadro de comentarios.');
     }
 }
 

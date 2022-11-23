@@ -38,7 +38,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    throw new Error('Failed to fetch site data');
+                    throw new Error('No se pudo obtener datos del sitio');
                 }
             });
         }
@@ -134,7 +134,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    throw new Error('Failed to fetch comments');
+                    throw new Error('No se pudo obtener comentarios');
                 }
             });
         },
@@ -154,7 +154,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
             if (res.ok) {
                 return res.json();
             } else {
-                throw new Error('Failed to fetch replies');
+                throw new Error('No se pudo obtener respuestas');
             }
         },
         add({comment}) {
@@ -173,7 +173,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    throw new Error('Failed to add comment');
+                    throw new Error('No se pudo agregar comentarios');
                 }
             });
         },
@@ -193,7 +193,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    throw new Error('Failed to edit comment');
+                    throw new Error('No se pudo editar comentarios');
                 }
             });
         },
@@ -207,7 +207,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    throw new Error('Failed to read comment');
+                    throw new Error('No se pudo leer comentarios');
                 }
             });
         },
@@ -223,7 +223,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
                 if (res.ok) {
                     return 'Success';
                 } else {
-                    throw new Error('Failed to like comment');
+                    throw new Error('No se pudo dar me gusta al comentario');
                 }
             });
         },
@@ -243,7 +243,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
                 if (res.ok) {
                     return 'Success';
                 } else {
-                    throw new Error('Failed to unlike comment');
+                    throw new Error('No se pudo quitar el me gusta del comentario');
                 }
             });
         },
@@ -259,7 +259,7 @@ function setupGhostApi({siteUrl = window.location.origin, apiUrl, apiKey}) {
                 if (res.ok) {
                     return 'Success';
                 } else {
-                    throw new Error('Failed to report comment');
+                    throw new Error('No se pudo reportar el comentario');
                 }
             });
         }

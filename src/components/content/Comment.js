@@ -93,9 +93,9 @@ function UnpublishedComment({comment, openEditMode}) {
 
     let notPublishedMessage;
     if (admin && comment.status === 'hidden') {
-        notPublishedMessage = 'This comment has been hidden.';
+        notPublishedMessage = 'Este comentario se ha ocultado.';
     } else {
-        notPublishedMessage = 'This comment has been removed.';
+        notPublishedMessage = 'Este comentario se ha eliminado.';
     }
 
     const avatar = (<BlankAvatar />);
@@ -109,7 +109,7 @@ function UnpublishedComment({comment, openEditMode}) {
                     <div className="mt-[4px]">
                         <MoreButton comment={comment} toggleEdit={openEditMode} />
                     </div>
-                </div> 
+                </div>
             </div>
             <RepliesContainer comment={comment} />
         </CommentLayout>
@@ -121,7 +121,7 @@ function UnpublishedComment({comment, openEditMode}) {
 function MemberExpertise({comment}) {
     const {member} = useContext(AppContext);
     const memberExpertise = member && comment.member && comment.member.uuid === member.uuid ? member.expertise : comment?.member?.expertise;
-    
+
     if (!memberExpertise) {
         return null;
     }
@@ -137,7 +137,7 @@ function EditedInfo({comment}) {
     }
     return (
         <span>
-            <span className="mx-[0.3em]">·</span>Edited
+            <span className="mx-[0.3em]">·</span>Editado
         </span>
     );
 }
@@ -170,11 +170,11 @@ function ReplyFormBox({comment, isInReplyMode, closeReplyMode}) {
 
 //
 // -- Published comment components --
-// 
+//
 
 // TODO: move name detection to helper
 function AuthorName({comment}) {
-    const name = !comment.member ? 'Deleted member' : (comment.member.name ? comment.member.name : 'Anonymous');
+    const name = !comment.member ? 'Suscriptor perdido' : (comment.member.name ? comment.member.name : 'Anónimo/a');
     return (
         <h4 className="text-[rgb(23,23,23] font-sans text-[17px] font-bold tracking-tight dark:text-[rgba(255,255,255,0.85)]">
             {name}
@@ -230,7 +230,7 @@ function CommentMenu({comment, toggleReplyMode, isInReplyMode, openEditMode, par
 
 //
 // -- Layout --
-// 
+//
 
 function RepliesLine({hasReplies}) {
     if (!hasReplies) {

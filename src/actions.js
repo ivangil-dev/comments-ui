@@ -287,7 +287,7 @@ async function editComment({state, api, data: {comment, parent}}) {
 async function updateMember({data, state, api}) {
     const {name, expertise} = data;
     const patchData = {};
-    
+
     const originalName = state?.member?.name;
 
     if (name && originalName !== name) {
@@ -304,7 +304,7 @@ async function updateMember({data, state, api}) {
         try {
             const member = await api.member.update(patchData);
             if (!member) {
-                throw new Error('Failed to update member');
+                throw new Error('No se pudo actualizar el suscriptor');
             }
             return {
                 member,

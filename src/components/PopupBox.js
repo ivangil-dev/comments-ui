@@ -3,7 +3,7 @@ import AppContext from '../AppContext';
 import Pages from '../pages';
 import GenericPopup from './popups/GenericPopup';
 
-export default function PopupBox() {    
+export default function PopupBox() {
     const {popup} = useContext(AppContext);
 
     // To make sure we can properly animate a popup that goes away, we keep a state of the last visible popup
@@ -38,7 +38,7 @@ export default function PopupBox() {
 
     if (!PageComponent) {
         // eslint-disable-next-line no-console
-        console.warn('Unknown popup of type ', type);
+        console.warn('PopUp de tipo desconocido ', type);
         return null;
     }
 

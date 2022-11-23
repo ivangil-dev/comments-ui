@@ -54,7 +54,7 @@ export const Avatar = ({comment}) => {
         const hash = getHashOfString(commentMember.name);
         const h = normalizeHash(hash, hRange[0], hRange[1]);
         const l = normalizeHash(hash, lRange[0], lRange[1]);
-        
+
         return [h, saturation, l];
     };
 
@@ -64,13 +64,13 @@ export const Avatar = ({comment}) => {
 
     const commentGetInitials = () => {
         if (comment && !comment.member) {
-            return getInitials('Deleted member');
+            return getInitials('Suscriptor perdido');
         }
-        
+
         let commentMember = (comment ? comment.member : member);
 
         if (!commentMember || !commentMember.name) {
-            return getInitials('Anonymous');
+            return getInitials('Anónimo/a');
         }
         return getInitials(commentMember.name);
     };

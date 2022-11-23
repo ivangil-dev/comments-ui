@@ -11,14 +11,14 @@ const ReplyForm = ({parent, close}) => {
     const [, setForm] = useRefCallback(scrollToElement);
 
     const config = {
-        placeholder: 'Reply to comment',
+        placeholder: 'Responder al comentario',
         autofocus: true
     };
 
     const editor = useEditor({
         ...getEditorConfig(config)
     });
-    
+
     const submit = useCallback(async ({html}) => {
         // Send comment to server
         await dispatchAction('addReply', {
@@ -34,7 +34,7 @@ const ReplyForm = ({parent, close}) => {
     const submitProps = {
         submitText: (
             <>
-                <span className="hidden sm:inline">Add </span><span className="capitalize sm:normal-case">reply</span>
+                <span className="hidden sm:inline">Añadir </span><span className="capitalize sm:normal-case">respuesta</span>
             </>
         ),
         submitSize: 'medium',

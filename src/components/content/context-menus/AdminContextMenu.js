@@ -19,13 +19,13 @@ const AdminContextMenu = ({comment, close}) => {
     return (
         <div className="flex flex-col">
             {
-                isHidden ? 
+                isHidden ?
                     <button type="button" className="w-full text-left text-[14px]" onClick={showComment}>
-                        <span>Show </span><span className="hidden sm:inline">comment</span>
-                    </button> 
-                    : 
+                        <span>Mostrar </span><span className="hidden sm:inline">comentario</span>
+                    </button>
+                    :
                     <button type="button" className="w-full text-left text-[14px]" onClick={hideComment}>
-                        <span>Hide </span><span className="hidden sm:inline">comment</span>
+                        <span>Ocultar </span><span className="hidden sm:inline">comentario</span>
                     </button>
             }
         </div>

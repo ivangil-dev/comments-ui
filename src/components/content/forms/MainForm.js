@@ -9,7 +9,7 @@ const MainForm = ({commentsCount}) => {
     const {postId, dispatchAction} = useContext(AppContext);
 
     const config = {
-        placeholder: (commentsCount === 0 ? 'Start the conversation' : 'Join the discussion'),
+        placeholder: (commentsCount === 0 ? 'Empieza la conversación' : 'Únete a la discusión'),
         autofocus: false
     };
 
@@ -33,7 +33,7 @@ const MainForm = ({commentsCount}) => {
         if (!editor) {
             return;
         }
-        
+
         // Add some basic keyboard shortcuts
         // ESC to blur the editor
         const keyDownListener = (event) => {
@@ -81,7 +81,7 @@ const MainForm = ({commentsCount}) => {
     const submitProps = {
         submitText: (
             <>
-                <span className="hidden sm:inline">Add </span><span className="capitalize sm:normal-case">comment</span>
+                <span className="hidden sm:inline">Añadir </span><span className="capitalize sm:normal-case">comentario</span>
             </>
         ),
         submitSize: 'large',

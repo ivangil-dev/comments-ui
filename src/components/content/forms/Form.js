@@ -94,12 +94,12 @@ const FormEditor = ({submit, progress, setProgress, close, reduced, isOpen, edit
             `}>
                 <EditorContent
                     onMouseDown={stopIfFocused} onTouchStart={stopIfFocused}
-                    editor={editor} 
+                    editor={editor}
                 />
             </div>
             <div className="absolute right-[9px] bottom-[9px] flex space-x-4 transition-[opacity] duration-150">
                 {close &&
-                    <button type="button" onClick={close} className="ml-2.5 font-sans text-sm font-medium text-neutral-500 outline-0 dark:text-neutral-400">Cancel</button>
+                    <button type="button" onClick={close} className="ml-2.5 font-sans text-sm font-medium text-neutral-500 outline-0 dark:text-neutral-400">Cancelar</button>
                 }
                 <button
                     className={`flex w-auto items-center justify-center sm:w-[128px] ${submitSize === 'medium' && 'sm:w-[100px]'} ${submitSize === 'small' && 'sm:w-[64px]'} h-[39px] rounded-[6px] border bg-neutral-900 py-2 px-3 text-center font-sans text-sm font-semibold text-white outline-0 transition-[opacity] duration-150 dark:bg-[rgba(255,255,255,0.9)] dark:text-neutral-800`}
@@ -131,7 +131,7 @@ const FormHeader = ({show, name, expertise, editName, editExpertise}) => {
                 onClick={editName}
                 data-testid="member-name"
             >
-                {name ? name : 'Anonymous'}
+                {name ? name : 'Anónimo/a'}
             </div>
             <div className="flex items-baseline justify-start">
                 <button
@@ -168,7 +168,7 @@ const Form = ({comment, submit, submitText, submitSize, close, editor, reduced, 
         }
     };
 
-    const openEditDetails = useCallback((options) => {        
+    const openEditDetails = useCallback((options) => {
         editor?.commands?.blur();
 
         dispatchAction('openPopup', {
@@ -184,7 +184,7 @@ const Form = ({comment, submit, submitText, submitSize, close, editor, reduced, 
                 if (!succeeded) {
                     return;
                 }
-        
+
                 // useEffect is not fast enought to enable it
                 editor.setEditable(true);
                 editor.commands.focus();

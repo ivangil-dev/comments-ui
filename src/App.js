@@ -76,7 +76,7 @@ export default class App extends React.Component {
             this.setState(state);
         } catch (e) {
             /* eslint-disable no-console */
-            console.error(`[Comments] Failed to initialize:`, e);
+            console.error(`[Comentarios] No se pudo inicializar:`, e);
             /* eslint-enable no-console */
             this.setState({
                 action: 'init:failed',
@@ -99,7 +99,7 @@ export default class App extends React.Component {
             } catch (e) {
                 // Loading of admin failed. Could be not signed in, or a different error (not important)
                 // eslint-disable-next-line no-console
-                console.warn(`[Comments] Failed to fetch current admin user:`, e);
+                console.warn(`[Comentarios] No se logró obtener el usuario administrativo actual:`, e);
             }
 
             const state = {
@@ -109,7 +109,7 @@ export default class App extends React.Component {
             this.setState(state);
         } catch (e) {
             /* eslint-disable no-console */
-            console.error(`[Comments] Failed to initialize admin authentication:`, e);
+            console.error(`[Comentarios] No se pudo inicializar la autenticación de administrador:`, e);
         }
     }
 
